@@ -12,30 +12,25 @@ $(document).ready(function() {
     })
 
     .mousedown(function() {
-        // console.log('mousedown');
-        playHadouken();
-        // play hadouken sound
-        $('.ryu-ready').hide();
-        $('.ryu-throwing').show();
-        $('.hadouken').finish().show()
-            .animate({
-                    'left': '1020px'
-                },
-                500,
-                function() {
-                    $('.hadouken').hide();
-                    $('.hadouken').css('left', '520px');
-                }
-            );
-    })
-
-
-    .mouseup(function() {
-        $('.ryu-throwing').hide();
-        $('.ryu-ready').show();
-        console.log('mouseup');
-        // ryu goes back to his ready position
-    });
+            console.log('mousedown');
+            playHadouken();
+            // play hadouken sound
+            $('.ryu-ready').hide();
+            $('.ryu-throwing').show();
+            $('.hadouken').finish().show()
+                .animate({ 'left': '1020px' },
+                    500,
+                    function() {
+                        $('.hadouken').hide();
+                        $('.hadouken').css('left', '520px');
+                    });
+        })
+        .mouseup(function() {
+            $('.ryu-throwing').hide();
+            $('.ryu-ready').show();
+            console.log('mouseup');
+            // ryu goes back to his ready position
+        });
 });
 
 function playHadouken() {
